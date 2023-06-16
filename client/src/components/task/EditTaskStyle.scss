@@ -1,0 +1,76 @@
+.task-edit {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .task-edit__background {
+    margin: 20px;
+    filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+  }
+
+  .task-edit__header {
+    font-weight: 700;
+    font-size: 24px;
+    height: 70px;
+  }
+
+  .task-edit__container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 30px;
+    gap: 30px;
+    border-radius: 7px;
+    filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+
+    .task-edit__form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+
+      .task-edit__input {
+        display: flex;
+        flex-direction: column;
+
+        input,
+        select,
+        textarea,
+        option {
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        textarea {
+          height: 200px;
+        }
+      }
+
+      .btn-edit {
+        display: flex;
+        gap: 10px;
+
+        button {
+          min-width: 100px;
+          background-color: rgb(93, 135, 255);
+          color: #fff;
+          padding: 10px 0;
+          display: flex;
+          border-radius: 7px;
+          border: 1px solid transparent;
+          font-size: 1rem;
+
+          font-weight: 500;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

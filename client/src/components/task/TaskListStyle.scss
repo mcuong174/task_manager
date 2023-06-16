@@ -1,0 +1,243 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  // height: max-content;
+  height: 100%;
+  // height: 100vh;
+  width: 100%;
+
+  .list-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+
+    .list-header {
+      font-weight: 700;
+      font-size: 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      height: 80px;
+
+      .sort-data {
+        height: 100%;
+        filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+
+        select {
+          height: 100%;
+          padding: 12px;
+          border: none;
+          outline: none;
+          border-radius: 7px;
+        }
+      }
+
+      .option-filter {
+        display: flex;
+        height: 100%;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+
+        .search {
+          position: relative;
+          height: 100%;
+          width: 30vw;
+
+          .input-search {
+            height: 100%;
+            width: 100%;
+            padding: 13px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+          }
+
+          svg {
+            position: absolute;
+            top: 50%;
+            right: 9px;
+            font-size: 1rem;
+            transform: translateY(-50%);
+            color: rgb(180, 185, 192);
+          }
+        }
+
+        .filter-add {
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+
+          .filter-data {
+            background-color: #fff;
+            border-radius: 7px;
+            height: 100%;
+            filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+
+            select {
+              outline: none;
+              border: none;
+              border-radius: 7px;
+              display: flex;
+              height: 100%;
+              gap: 6px;
+              cursor: pointer;
+              width: 100%;
+
+              option {
+                cursor: pointer;
+                margin: 3px;
+                padding: 6px 8px;
+                text-shadow: none;
+              }
+
+              button {
+                padding: 0 12px;
+                border: none;
+                background-color: transparent;
+                border-radius: 7px;
+                cursor: pointer;
+              }
+            }
+          }
+
+          .btn-addUser {
+            height: 100%;
+            filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+
+            button {
+              height: 100%;
+              border: none;
+              text-decoration: none;
+              background-color: #fff;
+              border-radius: 7px;
+              font-size: 1rem;
+              display: flex;
+              justify-content: center;
+              gap: 8px;
+              cursor: pointer;
+              padding: 11px;
+            }
+          }
+        }
+      }
+    }
+
+    .list-container {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .task-list {
+    .list-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      height: max-content !important;
+      width: 100%;
+
+      .option-filter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 80%;
+
+        .search {
+          width: 100% !important;
+          height: 100%;
+
+          input {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .filter-add {
+          width: 100%;
+
+          .btn-addUser {
+            width: 80%;
+            button {
+              width: 100%;
+            }
+          }
+
+          .filter-data {
+            width: 80%;
+
+            select {
+              padding: 12px;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .task-list {
+    .list-header {
+      height: max-content !important;
+      display: flex;
+      flex-direction: column;
+
+      .option-filter {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+
+        .search {
+          width: 100% !important;
+
+          input {
+            width: 100%;
+          }
+        }
+
+        .filter-add {
+          width: 100%;
+          display: flex;
+          flex-direction: column !important;
+
+          .btn-addUser {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            button {
+              width: 100%;
+            }
+          }
+
+          .filter-data {
+            width: 100%;
+
+            select {
+              padding: 12px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
