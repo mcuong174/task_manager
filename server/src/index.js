@@ -3,10 +3,15 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import bcrypt from "bcryptjs";
+import { config } from "dotenv";
+
+config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 6000;
 const saltRounds = 10;
+
+console.log("port: ", process.env.PORT);
 
 app.use(cors());
 app.use(express.json());
@@ -111,7 +116,7 @@ app.post("/newTask", (req, res) => {
 
 //Get tasks
 app.get("/tasks", (req, res) => {
-  connectionDB.query("SELECT * FROM tasks", (err, data) => {
+  connectionDB.query("SELECT * FROM tasks ORDER BY id DESC", (err, data) => {
     if (err) {
       return res.json({ error: err.sqlMessage });
     } else {

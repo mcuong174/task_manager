@@ -11,6 +11,10 @@ import TaskItem from "./TaskItem";
 import "./TaskListStyle.scss";
 
 export default function TaskList() {
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -38,7 +42,7 @@ export default function TaskList() {
 
   const handleGetAllTask = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/tasks");
+      const res = await axiosInstance.get("/tasks");
       const setDataUrl = res.data.data;
       setAllTask(setDataUrl);
       setFilterResult(setDataUrl);
@@ -52,7 +56,7 @@ export default function TaskList() {
   useEffect(() => {
     const handleDeleteTask = async (task) => {
       try {
-        await axios.delete(`http://localhost:5000/delete/task/${task.id}`);
+        await axiosInstance.delete(`/delete/task/${task.id}`);
         handleGetAllTask();
         setDelTask(false);
         setMessage(false);
@@ -201,18 +205,15 @@ export default function TaskList() {
               </div>
             </div>
             <div className="list-container">
-              {(filterResult ? filterResult : allTask)
-                .slice(0)
-
-                .map((data) => (
-                  <TaskItem
-                    props={data}
-                    key={data.id}
-                    setGetCurr={setGetCurr}
-                    message={message}
-                    setMessage={setMessage}
-                  />
-                ))}
+              {(filterResult ? filterResult : allTask).slice(0).map((data) => (
+                <TaskItem
+                  props={data}
+                  key={data.id}
+                  setGetCurr={setGetCurr}
+                  message={message}
+                  setMessage={setMessage}
+                />
+              ))}
             </div>
           </div>
         </div>

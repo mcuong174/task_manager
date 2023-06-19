@@ -9,6 +9,10 @@ import Loading from "../layout/Loading";
 import "./EditTaskStyle.scss";
 
 export default function TaskItem() {
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -32,7 +36,7 @@ export default function TaskItem() {
     e.preventDefault();
 
     try {
-      await axios.patch(`http://localhost:5000/task/${id}`, {
+      await axiosInstance.patch(`/task/${id}`, {
         taskName,
         description,
         dueDate,
@@ -46,7 +50,7 @@ export default function TaskItem() {
 
   const getTaskById = async (e) => {
     try {
-      const res = await axios.get(`http://localhost:5000/task/${id}`);
+      const res = await axiosInstance.get(`/task/${id}`);
 
       setTaskName(res.data.data[0].taskName);
       setDescription(res.data.data[0].description);

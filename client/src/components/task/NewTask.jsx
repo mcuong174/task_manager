@@ -13,16 +13,17 @@ const initialState = {
 };
 
 export default function NewTask({ setNewTask, newTask }) {
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
+
   const [state, setState] = useState(initialState);
 
   const { taskName, description, dueDate, status } = state;
 
   const addTask = async (data) => {
     try {
-      const apiAddTask = await axios.post(
-        `http://localhost:5000/newTask`,
-        data
-      );
+      const apiAddTask = await axiosInstance.post(`/newTask`, data);
       if (apiAddTask.status === 200) {
         setNewTask(!newTask);
       }

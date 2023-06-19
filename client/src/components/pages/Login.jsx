@@ -10,11 +10,15 @@ import Logo from "../../assets/react-2.svg";
 import "./LoginStyle.scss";
 
 export default function Login() {
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
+
   const navigate = useNavigate();
 
   const handleLogin = (values) => {
-    axios
-      .post("http://localhost:5000/login", {
+    axiosInstance
+      .post("/login", {
         email: values.email,
         password: values.password,
       })

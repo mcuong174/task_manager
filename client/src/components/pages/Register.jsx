@@ -10,11 +10,15 @@ import Logo from "../../assets/react-2.svg";
 import "./RegisterStyle.scss";
 
 export default function Register() {
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
+
   const navigate = useNavigate();
 
   const handleRegister = (data) => {
-    axios
-      .post("http://localhost:5000/register", {
+    axiosInstance
+      .post("/register", {
         fullName: data.fullName,
         email: data.email,
         password: data.password,
