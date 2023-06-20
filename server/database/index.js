@@ -7,9 +7,15 @@ const connectionDB = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-connectionDB.getConnection((err, conn) => {
-  if (err) console.log(err);
-  console.log("Connected successfully");
+connectionDB.connect((error) => {
+  if (error) {
+    console.error("Error connecting to MySQL database: " + error.stack);
+    return;
+  }
+
+  console.log(
+    "Connected to MySQL database with threadId: " + connectionDB.threadId
+  );
 });
 
 export default connectionDB.promise();

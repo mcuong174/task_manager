@@ -1,4 +1,4 @@
-import connectionDB from "../database/index";
+import connectionDB from "../database/index.js";
 
 const postsController = {
   getAll: async (req, res) => {
@@ -113,4 +113,4 @@ const postsController = {
   },
 };
 
-module.exports = postsController;
+export default postsController;

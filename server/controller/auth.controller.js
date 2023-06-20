@@ -1,4 +1,4 @@
-import connectionDB from "../database/index";
+import connectionDB from "../database/index.js";
 import bcrypt from "bcryptjs";
 const saltRounds = 10;
 
@@ -82,4 +82,4 @@ const authController = {
   },
 };
 
-module.exports = authController;
+export default authController;
