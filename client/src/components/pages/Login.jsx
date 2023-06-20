@@ -18,7 +18,7 @@ export default function Login() {
 
   const handleLogin = (values) => {
     axiosInstance
-      .post("/login", {
+      .post("auth/login", {
         email: values.email,
         password: values.password,
       })

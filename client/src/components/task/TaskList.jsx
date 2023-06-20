@@ -42,7 +42,7 @@ export default function TaskList() {
 
   const handleGetAllTask = async () => {
     try {
-      const res = await axiosInstance.get("/tasks");
+      const res = await axiosInstance.get("/posts/tasks");
       const setDataUrl = res.data.data;
       setAllTask(setDataUrl);
       setFilterResult(setDataUrl);
@@ -56,7 +56,7 @@ export default function TaskList() {
   useEffect(() => {
     const handleDeleteTask = async (task) => {
       try {
-        await axiosInstance.delete(`/delete/task/${task.id}`);
+        await axiosInstance.delete(`/posts/delete/task/${task.id}`);
         handleGetAllTask();
         setDelTask(false);
         setMessage(false);

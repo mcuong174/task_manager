@@ -23,7 +23,7 @@ export default function NewTask({ setNewTask, newTask }) {
 
   const addTask = async (data) => {
     try {
-      const apiAddTask = await axiosInstance.post(`/newTask`, data);
+      const apiAddTask = await axiosInstance.post(`/posts/newTask`, data);
       if (apiAddTask.status === 200) {
         setNewTask(!newTask);
       }

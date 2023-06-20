@@ -50,7 +50,7 @@ export default function TaskItem() {
 
   const getTaskById = async (e) => {
     try {
-      const res = await axiosInstance.get(`/task/${id}`);
+      const res = await axiosInstance.get(`/posts/task/${id}`);
 
       setTaskName(res.data.data[0].taskName);
       setDescription(res.data.data[0].description);

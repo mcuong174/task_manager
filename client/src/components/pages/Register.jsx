@@ -18,7 +18,7 @@ export default function Register() {
 
   const handleRegister = (data) => {
     axiosInstance
-      .post("/register", {
+      .post("/auth/register", {
         fullName: data.fullName,
         email: data.email,
         password: data.password,

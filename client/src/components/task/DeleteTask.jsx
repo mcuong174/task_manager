@@ -12,7 +12,7 @@ export default function DeleteTask({ setDelTask, delTask, id }) {
     setDelTask(!delTask);
 
     if (delTask === true) {
-      await axiosInstance.delete(`/delete/task/${id}`);
+      await axiosInstance.delete(`/posts/delete/task/${id}`);
     }
   };
   return (
