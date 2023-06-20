@@ -5,14 +5,14 @@ import "./DeleteTaskStyle.scss";
 
 export default function DeleteTask({ setDelTask, delTask, id }) {
   const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
+    baseURL: process.env.REACT_APP_API_URL_POSTS,
   });
 
   const handleDeleteTask = async () => {
     setDelTask(!delTask);
 
     if (delTask === true) {
-      await axiosInstance.delete(`/posts/delete/task/${id}`);
+      await axiosInstance.delete(`/delete/task/${id}`);
     }
   };
   return (

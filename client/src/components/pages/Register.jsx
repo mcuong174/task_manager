@@ -11,14 +11,14 @@ import "./RegisterStyle.scss";
 
 export default function Register() {
   const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
+    baseURL: process.env.REACT_APP_API_URL_AUTH,
   });
 
   const navigate = useNavigate();
 
   const handleRegister = (data) => {
     axiosInstance
-      .post("/auth/register", {
+      .post("/register", {
         fullName: data.fullName,
         email: data.email,
         password: data.password,
