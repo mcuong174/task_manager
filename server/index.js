@@ -1,6 +1,5 @@
 import express, { json } from "express";
 import cors from "cors";
-// import { urlencoded } from "body-parser";
 import { config } from "dotenv";
 
 config();
