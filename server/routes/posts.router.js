@@ -1,5 +1,5 @@
 import express from "express";
-const router = express.Router();
+const router = express();
 
 import postsController from "../controller/posts.controller.js";
 
