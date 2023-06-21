@@ -11,7 +11,7 @@ import "./RegisterStyle.scss";
 
 export default function Register() {
   const axiosInstance = axios.create({
-    baseURL: "https://servertasks.onrender.com/api/v1/auth"
+    baseURL: process.env.REACT_APP_API_URL_AUTH,
   });
 
   const navigate = useNavigate();
