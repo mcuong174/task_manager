@@ -10,7 +10,7 @@ import "./EditTaskStyle.scss";
 
 export default function TaskItem() {
   const axiosInstance = axios.create({
-    baseURL: "https://servertasks.onrender.com/api/v1/posts",
+    baseURL: process.env.REACT_APP_API_URL_POSTS,
   });
 
   const [loading, setLoading] = useState(true);
