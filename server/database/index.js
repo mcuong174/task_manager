@@ -18,4 +18,4 @@ connectionDB.connect((error) => {
   );
 });
 
-export default connectionDB.promise();
+export default connectionDB;
