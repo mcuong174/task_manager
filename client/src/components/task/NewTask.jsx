@@ -14,7 +14,7 @@ const initialState = {
 
 export default function NewTask({ setNewTask, newTask }) {
   const axiosInstance = axios.create({
-    baseURL: "http://task-manager-server-liart.vercel.app/api/v1/posts",
+    baseURL: "https://servertasks.onrender.com/api/v1/posts",
   });
 
   const [state, setState] = useState(initialState);
