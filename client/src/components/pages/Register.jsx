@@ -17,7 +17,8 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleRegister = (data) => {
-    axiosInstance
+    try{
+      axiosInstance
       .post("/register", {
         fullName: data.fullName,
         email: data.email,
@@ -35,6 +36,10 @@ export default function Register() {
           });
         }
       });
+    }catch(error) {
+      console.log(error);
+    }
+    
   };
   const validationsRegister = yup.object().shape({
     fullName: yup.string().required("Full Name is necessary!"),
