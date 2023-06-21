@@ -11,7 +11,7 @@ import "./RegisterStyle.scss";
 
 export default function Register() {
   const axiosInstance = axios.create({
-    baseURL: "http://task-manager-server-liart.vercel.app/api/v1/auth"
+    baseURL: "https://servertasks.onrender.com/api/v1/auth"
   });
 
   const navigate = useNavigate();
