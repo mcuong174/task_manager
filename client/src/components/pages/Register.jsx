@@ -11,7 +11,7 @@ import "./RegisterStyle.scss";
 
 export default function Register() {
   const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL_AUTH,
+    baseURL: "http://task-manager-server-liart.vercel.app/api/v1/auth"
   });
 
   const navigate = useNavigate();
