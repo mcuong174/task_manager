@@ -13,7 +13,7 @@ import "./TaskListStyle.scss";
 
 export default function TaskList() {
   const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL_POSTS,
+    baseURL: "http://task-manager-server-liart.vercel.app/api/v1/posts",
   });
 
   const [loading, setLoading] = useState(true);
