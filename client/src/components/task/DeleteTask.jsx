@@ -5,7 +5,7 @@ import "./DeleteTaskStyle.scss";
 
 export default function DeleteTask({ setDelTask, delTask, id }) {
   const axiosInstance = axios.create({
-    baseURL: "https://servertasks.onrender.com/api/v1/posts",
+    baseURL: process.env.REACT_APP_API_URL_POSTS,
   });
 
   const handleDeleteTask = async () => {
