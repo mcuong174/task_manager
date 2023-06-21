@@ -17,7 +17,8 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = (values) => {
-    axiosInstance
+    try{
+       axiosInstance
       .post("/login", {
         email: values.email,
         password: values.password,
@@ -38,6 +39,10 @@ export default function Login() {
           });
         }
       });
+    }catch(error){
+      console.log(error)
+    }
+   
   };
 
   const validationsLogin = yup.object().shape({
