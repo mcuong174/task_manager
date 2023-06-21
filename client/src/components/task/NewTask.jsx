@@ -14,7 +14,7 @@ const initialState = {
 
 export default function NewTask({ setNewTask, newTask }) {
   const axiosInstance = axios.create({
-    baseURL: "https://servertasks.onrender.com/api/v1/posts",
+    baseURL: process.env.REACT_APP_API_URL_POSTS,
   });
 
   const [state, setState] = useState(initialState);
